@@ -84,14 +84,14 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
             batch_y = batch_y.to(device)
             
             # TODO: Complete this train method to train the model provided.
-            
-            # zero accumulated gradients
-            model.zero_grad()
-            
-             # get the output from the model
+                        
+            # get the output from the model
             output = model.forward(batch_X)
+
+            # zero accumulated gradients
+            optimizer.zero_grad()            
             # calculate the loss and perform backprop
-            loss = loss_fn(output, batch_y.float())
+            loss = loss_fn(output, batch_y)
             loss.backward()
             
             # `clip_grad_norm` helps prevent the exploding gradient problem in RNNs / LSTMs.
