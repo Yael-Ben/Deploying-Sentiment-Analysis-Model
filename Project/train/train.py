@@ -72,7 +72,7 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
     # TODO: Paste the train() method developed in the notebook here.
 
     import torch.nn as nn
-	clip=5 # gradient clipping
+    clip=5 # gradient clipping
 
     for epoch in range(1, epochs + 1):
         model.train()
